@@ -13,6 +13,9 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*check every frame to see other entities.  If I can, and they are being suspicious, increase
+        their suspicion meter*/
+        /*check every frame to see other entities.  If I can, and their suspicion meter is high enough,
+        start an Alarm*/
     }
 }

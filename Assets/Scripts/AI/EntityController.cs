@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(AIController))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -14,7 +13,10 @@ public class EntityController : MonoBehaviour
     AIController myAI;
     NavMeshAgent agent;
     NavMeshPath path;
-    bool amVector;
+    [HideInInspector]
+    public double suspicionMeter = 0;
+    [HideInInspector]
+    public bool amVector;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,6 @@ public class EntityController : MonoBehaviour
 [System.Serializable]
 public class EntityMetadata
 {
-    public Image myPortrait;
-    public Text myName;
+    public Sprite myPortrait;
+    public string myName;
 }

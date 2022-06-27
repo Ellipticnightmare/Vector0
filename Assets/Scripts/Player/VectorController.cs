@@ -7,6 +7,7 @@ public class VectorController : MonoBehaviour
 {
     public EntityController myCurEntity, displayedEntity;
     public static VectorController instance;
+    public Object dispObject;
     #region UI
     public GameObject defaultDisplayUI, AIDisplayUI, EntityControlUI;
     #region EntityControl
@@ -17,6 +18,10 @@ public class VectorController : MonoBehaviour
     #region AIDisplay
     #endregion
     #region defaultDisplay
+    #region Object
+    public Text objName, progress;
+    public Image objPortrait;
+    #endregion
     #endregion
     #endregion
     [HideInInspector]
@@ -32,8 +37,8 @@ public class VectorController : MonoBehaviour
     {
         if(myCurEntity != null)
         {
-            entityPortrait = myCurEntity.myData.myPortrait;
-            entityName = myCurEntity.myData.myName;
+            entityPortrait.sprite = myCurEntity.myData.myPortrait;
+            entityName.text = myCurEntity.myData.myName;
             foreach (var item in healthPoints)
             {
                 item.color = Color.red;
@@ -46,6 +51,12 @@ public class VectorController : MonoBehaviour
         else if(displayedEntity != null)
         {
 
+        }
+        else if(dispObject != null)
+        {
+            objPortrait.sprite = dispObject.thisData.myPortrait;
+            objName.text = dispObject.thisData.myName;
+            progress.text = dispObject.progress.ToString();
         }
     }
     public void selectedTask(EntityTasks task)
