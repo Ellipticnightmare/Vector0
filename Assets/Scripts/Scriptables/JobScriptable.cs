@@ -6,5 +6,5 @@ using UnityEngine;
 public class JobScriptable : ScriptableObject
 {
     public string jobName;
-    public TaskScriptable[] jobTasks;
+    public List<TaskScriptable> jobTasks = new List<TaskScriptable>();
 }

@@ -20,12 +20,24 @@ public class GameManager : MonoBehaviour
     public Object[] emergencyGenerators;
     public Object[] primaryGenerators;
     #endregion
-    #region Gameplay
+    #region Map Locations and Data
+    [Header("Locations")]
+    public Collider Cafeteria;
+    public Collider[] GeneratorRooms;
+    public Collider[] BedRooms;
+    public BedPoint[] BedPoints;
+    public Transform[] WaterPoints;
+    #endregion
+    #region Gameplay Data
     [Header("Data Variables")]
     public int DNApoints = 0;
+    public Object[] taskObjects;
+    public static GameManager instance;
     #endregion
     private void Start()
     {
+        instance = this;
+        taskObjects = FindObjectsOfType<Object>();
         EntityController[] entities = FindObjectsOfType<EntityController>();
         int x = Random.Range(0, entities.Length);
         entities[x].amVector = true;

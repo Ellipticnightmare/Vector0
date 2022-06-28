@@ -25,7 +25,7 @@ public class VectorController : MonoBehaviour
     #endregion
     #endregion
     [HideInInspector]
-    public EntityTasks curTask = EntityTasks.empty;
+    public VectorTasks curTask = VectorTasks.empty;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,12 +59,12 @@ public class VectorController : MonoBehaviour
             progress.text = dispObject.progress.ToString();
         }
     }
-    public void selectedTask(EntityTasks task)
+    public void selectedTask(VectorTasks task)
     {
         curTask = task;
     }
 }
-public enum EntityTasks
+public enum VectorTasks
 {
     empty,
     attack,

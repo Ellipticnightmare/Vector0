@@ -4,6 +4,7 @@ using UnityEngine;
 public class Object : MonoBehaviour
 {
     public EntityMetadata thisData;
+    public TaskScriptable myTask;
     public double progress = 100;
     public bool isRepair;
     private void Update()
