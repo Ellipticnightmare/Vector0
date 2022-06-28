@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
     [HideInInspector]
     public JobScriptable myJob;
     EntityController myController;
+    [HideInInspector]
+    public List<AIStatus> myCurrentStatuses = new List<AIStatus>();
     // Start is called before the first frame update
     void Start()
     {
         myController = this.GetComponent<EntityController>();
+        myCurrentStatuses.Add(AIStatus.Default);
     }
 
     // Update is called once per frame

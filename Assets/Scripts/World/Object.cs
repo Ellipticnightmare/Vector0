@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Object : MonoBehaviour
 {
-    public EntityMetadata thisData;
+    public EntityMetadata thisData; //Assigned in Inspector to show the Object name and portrait
     public TaskScriptable myTask;
     public double progress = 100;
     public bool isRepair;
